@@ -117,7 +117,7 @@ message.channel.sendEmbed(cat);
     'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
 ]
   client.on('message', message => {
-if (message.content.startsWith('$صراحه')) {
+if (message.content.startsWith('^صراحه')) {
     if(!message.channel.guild) return message.reply('** This command only for servers **');
  var client= new Discord.RichEmbed()
  .setTitle("لعبة صراحة ..")
@@ -198,7 +198,7 @@ client.on('message', message => {
  
   .setColor("#FF0000")
   .addField('``سرعة أتصال الــبوت`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
-                 .setFooter(` LegendsBot
+                 .setFooter(` PrinceBot
  .`, 'https://b.top4top.net/p_6021qh431.jpg')
 
   message.channel.sendEmbed(embed);
@@ -224,7 +224,7 @@ client.on('message', message => {
 });
 
 client.on('message', function(msg) {
-         var prefix = "~"
+         var prefix = "^"
     if(msg.content.startsWith ('^What')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
@@ -258,7 +258,7 @@ client.on('message', message => {
 
 
 client.on("message", message => {
- if (message.content === "~invite") {
+ if (message.content === "^invite") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
 
