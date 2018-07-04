@@ -11,7 +11,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Bot By ┃ NoNo ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(` Bot By KillerFox | $help `,"http://twitch.tv/S-F")
+client.user.setGame(` Bot By NoNo | ^help `,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
          client.on('message', message => {
@@ -283,6 +283,17 @@ client.on('message', message => {
         message.delete()
     return message.reply(`** لايمكنك نشر الفيس بوك هنا **`)
     }
+});
+  client.on("message", message => {
+ if (message.content === "~help-public") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setFooter('======================================================')
+	  .addField('^help-ar', `help Ar`)
+	  .addField('^help-en', `help En`)
+      .setFooter('======================================================')
+  message.author.send({embed});
+  }
 });
 
 
