@@ -380,19 +380,21 @@ client.on("message", message => {
 
     }
   });
+client.on("message", message => {
+
+            if (message.content.startsWith("^bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` : عدد الاعضاء المستلمين`); 
+ message.delete(); 
+};     
+});
   
 
 
-client.on("message", (message) => {
-    if (message.content.startsWith("^ban")) {
-      if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('⚠ ماعندك الصلاحيات');
-        var member= message.mentions.members.first();
-        member.ban().then((member) => {
-            message.channel.send(member.displayName + " لقد تم طرده بنجاح 👋 ");
-        }).catch(() => {
-            message.channel.send("❌ هناك خطاء حاول مره أخرى❌ ");
-        });
-    }
-});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
